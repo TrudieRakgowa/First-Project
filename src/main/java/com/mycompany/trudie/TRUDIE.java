@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class TRUDIE {
 
     public static void main(String[] args) {
-        login second = new login();
+        External second = new External();
         Scanner sc = new Scanner(System.in);
         
         
@@ -36,7 +36,10 @@ public class TRUDIE {
          }
          while(!second.checkPassword(Password));
          
-         
+         //Calling my class
+         second.UserName(Username);
+         second.checkPassword(Password);
+         second.registerUser();
         
          }
         
