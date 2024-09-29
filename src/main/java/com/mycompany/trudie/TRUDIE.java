@@ -3,7 +3,7 @@
  */
 
 package com.mycompany.trudie;
-
+import java.util.Scanner;
 /**
  *
  * @author RC_Student_lab
@@ -11,9 +11,12 @@ package com.mycompany.trudie;
 public class TRUDIE {
 
     public static void main(String[] args) {
-        int a = 5;
-        int b = 10;
-        int c = a + b;
-        System.out.println(c);
+        login second = new login();
+        
+        //Declarations
+        String Username, FirstName,LastName,Password;
+        
+        Scanner sc = new Scanner(System.in);
+        
     }
 }
