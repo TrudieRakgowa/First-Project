@@ -9,39 +9,22 @@ import java.util.Scanner;
  * @author RC_Student_lab
  */
 public class TRUDIE {
+public String Uname, Fname,Lname,Pass;
+
 
     public static void main(String[] args) {
-        External second = new External();
-        Scanner sc = new Scanner(System.in);
-        
-        
-        //Declarations
-        String Username, FirstName,LastName,Password;
-        
-        //Prompt user to enter details
-        do{
-        System.out.println("Enter Username");
-        Username = sc.next();
-        }while(second.Username(Username));
-        
-         System.out.println("Enter FirstName");
-         FirstName = sc.next();
-         
-         System.out.println("Enter LastName");
-         LastName = sc.next();
-         
-         do{
-             System.out.println("Enter Password: ");
-             Password = sc.next();
-         }
-         while(!second.checkPassword(Password));
-         
-         //Calling my class
-         second.UserName(Username);
-         second.checkPassword(Password);
-         second.registerUser();
-        
-         }
-        
+    new TRUDIE();
+    
+    }
+    public TRUDIE(){
+      String Fname = (JOptionPane.showInputDialog("Please enter your Firstname."));
+      String Lname = (JOptionPane.showInputDialog("Please enter your Lastname."));
+      String Uname = (JOptionPane.showInputDialog("Please enter your Username that must contain no more than 5 characters"+ "should contain an underscore."));
+      String Pass = (JOptionPane.showInputDialog("Please enter your Password."));
+      boolean checkname = false;
+      boolean checkpassword = false;
+      Login Login2 = new Login(Uname,Fname,Lname,Pass);
+      Login2.checkPasswordComp();
+      
     }
 

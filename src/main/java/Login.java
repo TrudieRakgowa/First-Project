@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author RC_Student_lab
@@ -74,12 +74,25 @@ public boolean loginUser()
     String PasswordComp = Password;
     do
     {
-        UsernameComp = JOptionPan.showInputDialog("Please re-enter your username.");
-        PasswordComp = JOptionPan.showInputDialog("Please re-enter your password.");
+        UsernameComp = JOptionPane.showInputDialog("Please re-enter your username.");
+        PasswordComp = JOptionPane.showInputDialog("Please re-enter your password.");
     }while (UsernameComp == Username || PasswordComp == Password);
     return true;
 }
-
+public String returnLoginStatus(){
+    boolean statement;
+    String ReturnOutput = "";
+    if (loginUser() == true)
+    {
+        ReturnOutput = "A successful login.";
+        statement = true;
+    }
+    else{
+        ReturnOutput = "A failed login.";
+        statement = false;
+    }
+    return ReturnOutput;
+}
 
 }
 
