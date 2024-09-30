@@ -3,28 +3,43 @@
  */
 
 package com.mycompany.trudie;
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 /**
  *
  * @author RC_Student_lab
  */
 public class TRUDIE {
-public String Uname, Fname,Lname,Pass;
-
-
-    public static void main(String[] args) {
-    new TRUDIE();
     
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    Login login = new Login();
+    
+    //Registration process
+        System.out.println("===User Registration===");
+        System.out.println("Enter first name: ");
+        String firstName = sc.nextLine();
+        System.out.println("Enter your name: ");
+        String lastName = sc.nextLine();
+        System.out.println("Enter username(must contain an underscore and be no more than 5 characters):");
+        String username = sc.nextLine();
+        System.out.println("Enter password (must bee at least 8 character,containa capital letter,a number,and a special character):");
+        String password = sc.nextLine();
+        
+        //Register the user and display the result
+        String registrationResult = login.registerUser(username, password, firstName, lastName);
+        System.out.println(registrationResult);
+        //If registration is successful, proceed to login
+        if(registrationResult.equals("Username and password successfully captured.")){
+            System.out.println("\n===User Login ===");
+            System.out.println("Enter username: ");
+            String loginUsername = sc.nextLine();
+            System.out.println("Enter password: ");
+            String loginPassword = sc.nextLine();
+            
+            //Display the login status message
+            System.out.println(login.returnLoginStatus(loginUsername, loginPassword));
+        }
+        sc.close();
     }
-    public TRUDIE(){
-      String Fname = (JOptionPane.showInputDialog("Please enter your Firstname."));
-      String Lname = (JOptionPane.showInputDialog("Please enter your Lastname."));
-      String Uname = (JOptionPane.showInputDialog("Please enter your Username that must contain no more than 5 characters"+ "should contain an underscore."));
-      String Pass = (JOptionPane.showInputDialog("Please enter your Password."));
-      boolean checkname = false;
-      boolean checkpassword = false;
-      Login Login2 = new Login(Uname,Fname,Lname,Pass);
-      Login2.checkPasswordComp();
-    }
-    }
-
+    
+}

@@ -65,5 +65,13 @@ class Login {
         if (loginUser(username,password)){
             return"Welcome" + firstname + "_" + lastname + "it is great to see you again.";
         }  
+        return null;
+    }
+
+    public boolean loginUser(String username, String password) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    }
 }
+
     
