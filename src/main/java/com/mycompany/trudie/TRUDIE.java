@@ -3,7 +3,7 @@
  */
 
 package com.mycompany.trudie;
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 /**
  *
  * @author RC_Student_lab
@@ -25,6 +25,6 @@ public String Uname, Fname,Lname,Pass;
       boolean checkpassword = false;
       Login Login2 = new Login(Uname,Fname,Lname,Pass);
       Login2.checkPasswordComp();
-      
+    }
     }
 
