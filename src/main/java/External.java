@@ -41,7 +41,7 @@ public class External {
       String Password ="Trudie#05" ;
       
       if (Username.equals("Tee_")&& Password.equals("Trudie#05")){
-          System.out.println("Welcome");
+          System.out.println("Welcome <user FirstName>,<user LastName> it is great to see you");
            }
       else{
           System.out.println("Username or Password is incorrect try again");
