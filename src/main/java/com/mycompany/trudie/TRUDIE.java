@@ -3,17 +3,28 @@
  */
 
 package com.mycompany.trudie;
-import java.util.Scanner;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.ArrayList;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+
+
+
 /**
  *
  * @author RC_Student_lab
  */
 public class TRUDIE {
-    
+    private static boolean loggedIn = false;
+    private static ArrayList<TaskClass> task = new ArrayList<>();
     public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    Login login = new Login();
+        
+   final JDialog dialog = new JDialog();
+   dialog.setAlwaysOnTop(loggedIn);
+   Login login = new Login();
     
+   Scanner sc = new Scanner(System.in);
     //Registration process
         System.out.println("===User Registration===");
         System.out.println("Enter first name: ");
@@ -36,10 +47,48 @@ public class TRUDIE {
             System.out.println("Enter password: ");
             String loginPassword = sc.nextLine();
             
+            boolean loginStats = login.LoginUser(loginUsername, loginPassword);
             //Display the login status message
-            System.out.println(login.returnLoginStatus(loginUsername, loginPassword));
+            System.out.println(login.returnLoginStatus(loginStats));
+            
         }
-        sc.close();
+            
+            
+            //if(loginStats){
+                //loggedIn = true;
+                JOptionPane.showMessageDialog(null,"Welcome to EasyKanban");
+                //part 2 starts here
+                TaskClass task = new TaskClass();
+             
+               
+                
+                //Creating a menu using switch and cases that shows user has loggin successfully
+                while (true){
+                    String[] options = {"Add tasks", "Show report", "Quit"};
+                    int choice = JOptionPane.showOptionDialog(null, "Please choose an option", "EasyKanban Menu", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+                   
+                    switch (choice){
+                        case 0 :
+                            task.addTasks();
+                            break;
+                        case 1 :
+                            JOptionPane.showMessageDialog(null, "Coming soon");
+                            break;
+                        case 2 :
+                            JOptionPane.showMessageDialog(null, "Exiting EasyKanban. Goodbye");
+                            return;
+                        default:
+                            return;
+                            
+                }
+                  // Dialog.dispose(); 
+                }
+                                         
+                // And ends here
+                
+            //}
+        
+        //sc.close();
     }
     
 }

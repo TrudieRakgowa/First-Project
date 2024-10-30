@@ -61,17 +61,14 @@ class Login {
         return username.equals(registeredUsername)&& password.equals(registeredPassword);
     }
     //method to return the login status message
-    public String returnLoginStatus(String username, String password){
-        if (loginUser(username,password)){
+    public String returnLoginStatus(boolean login){
+        if (login){
             return"Welcome" + firstname + "_" + lastname + "it is great to see you again.";
         }  
         return null;
     }
 
-    public boolean loginUser(String username, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    
-    }
+   
 }
 
     
